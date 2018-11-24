@@ -44,7 +44,7 @@ int main() {
 	printf("Now, insert a position: ");
 	scanf_s("%d", &pos);
 
-	nth = ((number & 1)  == 1);
+	nth = ((number >> pos) & 1);
 
 	printf("%d in %d is %d\n", number, pos, nth);*/
 
@@ -58,7 +58,7 @@ int main() {
 	printf("Insert a bit to eliminate: ");
 	scanf_s("%d", &pos);
 
-	FinalNumber = (number & (1 << pos));
+	FinalNumber = (number & (~ (1 << pos));
 
 	printf("%d\n", FinalNumber);*/
 
@@ -79,7 +79,7 @@ int main() {
 
 	printf("Please insert a number: ");
 	scanf_s("%d", &number);
-	
+
 	for (int i = 0; i <= 256; i++) {
 
 		if ((number >> i) & 1 == 1) {
@@ -98,7 +98,7 @@ int main() {
 	for (int i = 0; i <= 256; i++) {
 
 		if ((number >> i) & 1) {
-			
+
 			break;
 		}
 
@@ -106,6 +106,37 @@ int main() {
 	}
 
 	printf("Number of zeros: %d\n", count);*/
+
+	/*Leading Zeros
+	int count = -1;
+	int i, number = 0;
+	printf("Please insert a number: ");
+	scanf_s("%d", &number);
+
+	for (i = 0; i <= 256; i++) {
+
+		if ((number << i) & 256) {
+
+			break;
+		}
+
+		count++;
+	}
+
+	printf("Number of leading zeros are %d\n", count);
+	*/
+
+	/*Flip
+	int i, number = 0;
+	int newNumber = 0;
+	printf("Please insert a number: ");
+	scanf_s("%d", &number);
+
+	newNumber = ~number;
+
+	printf("%d\n", newNumber);*/
+
+	
 
 	system("\npause");
 	return 0;
