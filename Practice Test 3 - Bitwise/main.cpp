@@ -29,28 +29,27 @@ void printBits(byte bits)
 
 int explodeCandies(Candy candies[], int numCandies)
 {
-	int totalScore = 0;
-	// TODO: Type your code here
+	int Totalscore = 0;
+
 	for (int i = 0; i < numCandies; i++) {
 
-		if (((candies[i].flags >> 3) & 1) != 0 && (((candies[i].flags >> 4) & 1) != 1)){
+		if ((candies[i].flags & (1 << 3)) && (candies[i].flags & ~(1 << 4))) {
 
+			(candies[i].flags |= (1 << 4));
+			(candies[i].flags &= ~(1 << 3));
+			Totalscore += candies[i].points;
 
-			candies[i].flags = candies[i].flags ^ (1 << 3);
-			candies[i].flags = candies[i].flags ^ (1 << 4);
-
-			totalScore += candies[i].points;
 		}
 	}
+
+	return Totalscore;
 	
-	return totalScore;
 }
 
 void resetCandy(Candy candies[], int candyIndex, int points)
 {
-	// TODO: Type your code here
-	candies[candyIndex].flags = candies[candyIndex].flags ^ (1 << 3);
-	candies[candyIndex].flags = candies[candyIndex].flags ^ (1 << 4);
+	(candies[candyIndex].flags &= ~(1 << 4));
+	(candies[candyIndex].flags |= (1 << 3));
 	candies[candyIndex].points = points;
 }
 

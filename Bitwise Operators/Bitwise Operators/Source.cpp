@@ -3,140 +3,132 @@
 
 int main() {
 
-	/*LEAST DIGIT
-	int number;
+	int number = 0;
+	int pos = 0;
+	int i = 0;
 	printf("Please insert a number: ");
 	scanf_s("%d", &number);
+	printf("Please insert a position: ");
+	scanf_s("%d", &pos);
+
+#ifdef number
+
 
 	if ((number & 1) == 1) {
 
-		printf("\n%d is set(1)\n", number);
+		printf("Last bit is set\n");
 	}
 
 	else {
 
-		printf("%d is not(0)\n", number);
-	}*/
+		printf("Last bit is not\n");
+	}
 
-	/*MSB
-	int number;
-	printf("please insert a number: ");
-	scanf_s("%d", &number);
+#endif
 
-	int msb = 1 << 256;
-	if ((number & msb) == 1){
+#if number
 
-		printf("\n%d is set(1)\n", number);
-}
+
+	number = number >> 7;
+
+	if ((number & 1) == 1){
+
+		printf("Last bit is set\n");
+	}
 	else {
 
-		printf("\n%d is not(0)\n", number);
-	}*/
+		printf("Last bit is not\n");
+	}
 
-	/*NTH
-	int number;
-	int pos;
-	int i = 0;
-	int nth;
+#endif
 
-	printf("Please insert a number: ");
-	scanf_s("%d", &number);
-	printf("Now, insert a position: ");
-	scanf_s("%d", &pos);
+#if pos
 
-	nth = ((number >> pos) & 1);
+	
 
-	printf("%d in %d is %d\n", number, pos, nth);*/
+	number = (number >> pos - 1);
 
-	/*NTH(Clear)
-	int number;
-	int FinalNumber;
-	int pos = 0;
+	if ((number & 1) == 1) {
 
-	printf("Please insert a number: ");
-	scanf_s("%d", &number);
-	printf("Insert a bit to eliminate: ");
-	scanf_s("%d", &pos);
+		printf("The bit %d is set\n", pos);
+	}
+	else {
 
-	FinalNumber = (number & (~ (1 << pos));
+		printf("The bit %d is not\n", pos);
+	}
 
-	printf("%d\n", FinalNumber);*/
+#endif
 
-	/*Toggle NTH
-	int number, pos, finalNum;
+#if number
 
-	printf("Please insert a number: ");
-	scanf_s("%d", &number);
-	printf("Insert a bit to toggle: ");
-	scanf_s("%d", &pos);
+	number |= 1 << pos;
 
-	finalNum = (number ^ (1 << pos));
+	printf("%d\n", number);
 
-	printf("The number now is %d\n", finalNum);*/
+#endif
 
-	/*Set lowest bit
-	int number, pos;
+#if number
 
-	printf("Please insert a number: ");
-	scanf_s("%d", &number);
+	number &= (~(1 << pos));
 
-	for (int i = 0; i <= 256; i++) {
+	printf("%d\n", number);
 
-		if ((number >> i) & 1 == 1) {
+#endif
 
-			printf("Highest bit is at %d\n", i);
-			break;
-		}
-	}*/
+#if number
 
-	/*Thrilling zeros
-	int number, count = 0;
+	number ^= (1 << pos);
 
-	printf("Please insert a number: ");
-	scanf_s("%d", &number);
+	printf("The new number is %d\n", number);
 
-	for (int i = 0; i <= 256; i++) {
+#endif
+
+#if number
+
+	int order = -1;
+
+	for (int i = 0; i < 8; i++) {
 
 		if ((number >> i) & 1) {
 
-			break;
+			order = i;
 		}
-
-		count++;
 	}
 
-	printf("Number of zeros: %d\n", count);*/
+	printf("The highest bit is at %d\n", order);
 
-	/*Leading Zeros
-	int count = -1;
-	int i, number = 0;
-	printf("Please insert a number: ");
-	scanf_s("%d", &number);
+#endif
 
-	for (i = 0; i <= 256; i++) {
+#if number
 
-		if ((number << i) & 256) {
+	int order = 0;
 
+	for (int i = 0; i < 8; i++) {
+
+		if ((number >> i) & 1) {
+
+			order = i;
 			break;
 		}
-
-		count++;
 	}
 
-	printf("Number of leading zeros are %d\n", count);
-	*/
+	printf("The lowest bit is at %d\n", order);
 
-	/*Flip
-	int i, number = 0;
-	int newNumber = 0;
-	printf("Please insert a number: ");
-	scanf_s("%d", &number);
+#endif
 
-	newNumber = ~number;
+#if number
 
-	printf("%d\n", newNumber);*/
+	if (number & 1) {
 
-	
+		printf("The number is odd\n");
+	}
+
+	else {
+
+		printf("The number is even\n");
+	}
+
+#endif
 
 	system("\npause");
 	return 0;
