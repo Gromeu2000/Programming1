@@ -3,12 +3,7 @@
 #include <stdlib.h> 
 #include "Functions.h"
 
+void ex4() {
 
-int main()
-{
-	ex1();
-	ex2();
-	ex3();
-	system("pause");
-	return 0;
+
 }

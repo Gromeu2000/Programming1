@@ -115,13 +115,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Ex 3.cpp" />
+    <ClCompile Include="Ex 4.cpp" />
     <ClCompile Include="Ex1.cpp" />
     <ClCompile Include="Ex2.cpp" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Ex1.h" />
-    <ClInclude Include="Ex2.h" />
+    <ClInclude Include="Functions.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
