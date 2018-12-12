@@ -5,7 +5,7 @@
 
 void ex3() {
 
-	FILE *file = fopen("file_ex3.txt", "a");
+	FILE *file = fopen("file_ex3.txt", "w");
 
 	if (file != nullptr) {
 

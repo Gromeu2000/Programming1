@@ -119,6 +119,9 @@
     <ClCompile Include="Ex2.cpp" />
     <ClCompile Include="Ex3.cpp" />
     <ClCompile Include="Ex4.cpp" />
+    <ClCompile Include="Ex5.cpp" />
+    <ClCompile Include="Ex6.cpp" />
+    <ClCompile Include="Ex7.cpp" />
     <ClCompile Include="Main.cpp" />
   </ItemGroup>
   <ItemGroup>
