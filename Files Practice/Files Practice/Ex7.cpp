@@ -4,7 +4,6 @@
 
 void ex7() {
 
-	char characters[999];
 	int count = -1;
 	FILE *file = fopen("file_ex3.txt", "r");
 

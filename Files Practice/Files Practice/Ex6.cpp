@@ -13,6 +13,7 @@ void ex6() {
 		while (feof(file) == 0) {
 
 			word = fgetc(file);
+
 			if (word == ' ' || word =='\n') {
 
 				count++;
