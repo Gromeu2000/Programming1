@@ -4,11 +4,11 @@
 
 void ex7() {
 
-	int count = -1;
+	int count = 0;
+
 	FILE *file = fopen("file_ex3.txt", "r");
 
 	if (file != nullptr) {
-
 
 		while (feof(file) == 0) {
 
@@ -16,6 +16,7 @@ void ex7() {
 
 				count++;
 			}
+			
 		}
 
 		fclose(file);
@@ -23,3 +24,6 @@ void ex7() {
 
 	printf("The number of characters are %d\n", count);
 }
+
+
+

@@ -7,3 +7,6 @@ void ex4();
 void ex5();
 void ex6();
 void ex7();
+void ex8();
+void ex9();
+void ex10();
