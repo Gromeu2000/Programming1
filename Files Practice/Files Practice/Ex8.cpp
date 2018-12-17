@@ -4,19 +4,22 @@
 
 void ex8() {
 
-	char str1[999] = " ";
-
 	FILE *file = fopen("file_ex3.txt", "rb");
 	FILE *file2 = fopen("file_ex8.txt", "wb");
 
 	if (file != nullptr) {
 
+		char text[999] = " ";
 		while (feof(file) == 0) {
 
-			fread(str1, 999, 1, file);
+			fread(text, 999, 1, file);
 		}
 
-		fwrite(str1, 999, 1, file2);
+		if (file2 != nullptr) {
+
+			fwrite(text, 999, 1, file2);
+		}
+		
 	}
 
 	fclose(file);
